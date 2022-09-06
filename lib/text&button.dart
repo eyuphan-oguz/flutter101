@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter101/widgets/shadow.dart';
 
 class TutorialOnePage extends StatelessWidget {
   const TutorialOnePage({Key? key}) : super(key: key);
@@ -20,13 +21,19 @@ class TutorialButtonPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed:()=>press(),style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
-                side: BorderSide(color: Colors.red)
-            )
-        )
-    ), child: Icon(Icons.favorite));
+    return OutlinedButton(onPressed: ()=>this.press(),
+        child: ShadowWidget(
+          color: Colors.black,
+      elevation: 10,
+      child: Container(
+        height: 100,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.red,Colors.black,],stops: [0.0,0.5]
+          )
+        ),
+
+      ),
+    ));
   }
 }
