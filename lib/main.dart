@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter101/text&button.dart';
 import 'package:flutter101/views/home.dart';
+import 'package:flutter101/views/uibase.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
-        body:HomeView() ,
+        body:UIBaseView() ,
       )
     );
   }
